@@ -1,4 +1,4 @@
-from csv_parser import readFile, replaceFile
+from csv_parser import readFile, writeFile
 from Function import length
 
 #ALgoritma Utama
@@ -50,4 +50,4 @@ while True:
         print("Mohon masukkan jumlah yang valid!\n")
 
 #Menggantikan SELURUH isi file csv dengan yang baru (Utk sekarang diimplementasikan langsung ke dalam csv karena blm ada save() dan load())
-replaceFile("game.csv", store_files, 6)    
+writeFile("game.csv", store_files, 6)    
