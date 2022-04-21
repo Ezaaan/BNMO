@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-from csv_parser import readFile, writeFile
-=======
 from csv_parser import save
->>>>>>> eea73a8dbb619481a7d9cc484f337aaadc650ec8
 from Function import length
 
 #ALgoritma Utama
@@ -28,10 +24,6 @@ def ubah_stok(folder):
         print("Tidak ada game dengan ID tersebut!\n")
     game_ID=i
 
-<<<<<<< HEAD
-#Menggantikan SELURUH isi file csv dengan yang baru (Utk sekarang diimplementasikan langsung ke dalam csv karena blm ada save() dan load())
-writeFile("game.csv", store_files, 6)    
-=======
     #Meminta data baru untuk game
     #Akan terus mengulang jika input yang dimasukkan tidak valid atau sesuai
     while True:
@@ -62,4 +54,3 @@ writeFile("game.csv", store_files, 6)
     #Menggantikan SELURUH isi file csv dengan yang baru (Utk sekarang diimplementasikan langsung ke dalam csv karena blm ada save() dan load())
     replaceFile("game.csv", store_files, 6)    
 """
->>>>>>> eea73a8dbb619481a7d9cc484f337aaadc650ec8

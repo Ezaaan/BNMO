@@ -1,5 +1,6 @@
 from csv_parser import readFile, writeFile
 from Function import length
+from history import limitCharacters
 
 #Kumpulan Fungsi dan Prosedur 
 
@@ -28,12 +29,7 @@ def sort_list(X,count):
 #Menampilkan elemen berdasarkan urutan ID
 def asc_ID(X, count):
     for i in range (count):
-        print(str(i+1)+".", end=" ")
-        for j in range (6):
-            if j!=5:
-                print(X[i][j], "|", end=" ")
-            else:
-                print(X[i][j])
+        print(str(i+1)+".", limitCharacters(store_files[i][0], 7), "|", limitCharacters(store_files[i][1], 20), "|", limitCharacters(store_files[i][2], 12), "|", limitCharacters(store_files[i][3], 5), "|", limitCharacters(store_files[i][4], 7), "|", limitCharacters(store_files[i][5], 4))
 
 #Mengurutkan elemen list berdasarkan ID (Pengurutan kedua)
 def sort_ID(X, count):
@@ -55,11 +51,9 @@ def show_list(X, Y, store_files, count):
         sorted=sort_ID(reversed(sort_list(X, count), count), count)
     for i in range (count):
         print(str(i+1)+".", end=" ")
-        for j in range(6):
-            if j!=5:
-                print(store_files[(sorted[i][0]-1)][j], "|", end=" ")
-            else:
-                print(store_files[(sorted[i][0])-1][j])
+        print(limitCharacters(store_files[(sorted[i][0]-1)][0], 7), "|", limitCharacters(store_files[(sorted[i][0]-1)][1], 20), "|", limitCharacters(store_files[(sorted[i][0]-1)][2], 12), "|", limitCharacters(store_files[(sorted[i][0]-1)][3], 5), "|", limitCharacters(store_files[(sorted[i][0]-1)][4], 7), "|", limitCharacters(store_files[(sorted[i][0]-1)][5], 4), "|")
+
+
 
 ##################################################################################
 
@@ -83,7 +77,7 @@ def list_game_toko(folder):
     #Menentukan pilihan skema sorting yang diinput
     sort_type=input("Skema sorting: ")
     print()
-    print("ID | Name | Kategori | Tahun | Stok")
+    print("  ", limitCharacters("ID", 7), "|", limitCharacters("Name", 20), "|", limitCharacters("Kategori", 12), "|", limitCharacters("Tahun", 5), "|", limitCharacters("Harga", 7), "|", limitCharacters("Stok", 4))
     if sort_type=="":
         asc_ID(store_files, count)
     elif sort_type.lower()=="tahun+":
