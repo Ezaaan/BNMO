@@ -29,7 +29,7 @@ def sort_list(X,count):
 #Menampilkan elemen berdasarkan urutan ID
 def asc_ID(X, count):
     for i in range (count):
-        print(str(i+1)+".", limitCharacters(store_files[i][0], 7), "|", limitCharacters(store_files[i][1], 20), "|", limitCharacters(store_files[i][2], 12), "|", limitCharacters(store_files[i][3], 5), "|", limitCharacters(store_files[i][4], 7), "|", limitCharacters(store_files[i][5], 4))
+        print(str(i+1)+".", limitCharacters(X[i][0], 7), "|", limitCharacters(X[i][1], 20), "|", limitCharacters(X[i][2], 12), "|", limitCharacters(X[i][3], 5), "|", limitCharacters(X[i][4], 7), "|", limitCharacters(X[i][5], 4))
 
 #Mengurutkan elemen list berdasarkan ID (Pengurutan kedua)
 def sort_ID(X, count):
