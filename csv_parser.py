@@ -86,7 +86,7 @@ def cari(file, kategori, cari, hasil):
                 y = k
                 hasilFound = True
     found = False
-    for i in range(length(file[0])-2):
+    for i in range(length(file)):
         if file[i][x] == cari:
             result = file[i][y]
             found = True
@@ -124,3 +124,22 @@ def appendMatrix(file, stuff):
         matrix[j] = file[j]
     matrix[length(matrix)-1] = stuff
     return matrix
+
+
+def save(stuff):
+    choice = str(input("Apakah perubahan ingin disimpan? (Y/N) : "))
+    if choice == "Y":
+        folder = str(input("Masukkan nama folder : "))
+        if not os.path.exists(folder):
+            os.mkdir(folder)
+        writeFile(f"{folder}/game.csv", stuff[0], 6)
+        writeFile(f"{folder}/kepemilikan.csv", stuff[1], 2)
+        writeFile(f"{folder}/riwayat.csv", stuff[2], 5)
+        writeFile(f"{folder}/user.csv", stuff[3], 6)
+        
+        print("Perubahan berhasil tersimpan.")
+        return True
+    elif choice == "N":
+        print("Perubahan tidak tersimpan.")
+        return False
+        
